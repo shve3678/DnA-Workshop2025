@@ -1,7 +1,7 @@
 #!/bin/bash
 
-INDIR=/scratch/Shares/public/sread2025/data_files/day5/fastq/assessment_fastq 
-OUTDIR=/scratch/Users/shve3678/assessment/results
+INDIR=/scratch/Shares/public/sread2025/data_files/day5/fastq/for_loops_fastq/ 
+OUTDIR=/scratch/Users/shve3678/workshop-day5/results
 
 # makes a new directory if it does not already exist
 mkdir -p ${OUTDIR}
