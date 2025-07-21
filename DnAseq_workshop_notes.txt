@@ -1,0 +1,40 @@
+# SHORT READ SEQUENCING WORKSHOP NOTES
+
+hostname is the head node!
+
+scratch directory optimized for parallel work, much faster than home directory
+scratch NOT backed up, home directory IS
+only use this for input data + scripts
+on-site with cluster - home directory is off-site from cluster, SLOW
+
+sinfo - lists compute node info
+squeue --me
+sbatch <FILE> to submit your run script to the queue
+
+# job script
+mem is referring to RAM
+htop command will show you how mem is being used
+
+file extensions not recognized by slurm / nodes / etc
+it's for YOU to know what files are what!
+
+## DAY 4
+today, fastqc to generating bam / bia files
+first line in job script tells computer that you're writing in bash
+
+################
+## FINAL DAY ###
+################
+
+BBDuk for trimming!
+STAR for mapping is what Andrea uses
+Counting - Featurecounts and HTSeq are good and probs better than Bedtools
+Differential Expression - DESeq2 most widely used
+Alignment-based pipeline is what we have used
+Alignment-free pipeline is faster (e.g. Salmon) go see pros and cons in BMC Genomics 2018 paper - don't usually need a supercomputer!
+	> only map to exons basically - so we could probably use this! if we only care about protein-coding genes
+	> transcript basis, handles isoforms really well
+	> anything else, not really the best
+Alignment-free can be difficult because there's some differences with the reference genome, etc
+
+Good idea to include full path to a module before loading it in a script where you're not sure where you're running it (i.e., your local computer doesn't have fastqc!)
